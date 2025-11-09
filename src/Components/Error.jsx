@@ -1,0 +1,22 @@
+import { Link } from "react-router";
+
+const ErrorPage = () => {
+  return (
+    <div className="h-96 w-5/12 mx-auto pb-10 flex flex-col items-center rounded justify-center text-center bg-gray-100 text-gray-800">
+      <title>404-page</title>
+      <h1 className="text-6xl font-bold text-purple-900 mb-4">404</h1>
+      <h2 className="text-2xl font-semibold mb-2">Oops! Page Not Found</h2>
+      <p className="mb-6 text-gray-600">
+        The page you’re looking for doesn’t exist or has been moved.
+      </p>
+      <Link
+        to="/"
+        className="btn bg-purple-900 text-white px-6 py-2 rounded-lg hover:bg-purple-800"
+      >
+        Go Home
+      </Link>
+    </div>
+  );
+};
+
+export default ErrorPage;
