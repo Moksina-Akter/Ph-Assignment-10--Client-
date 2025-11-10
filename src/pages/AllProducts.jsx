@@ -100,7 +100,7 @@ const AllProducts = () => {
               : "text-3xl font-bold text-purple-900 mb-6 text-center"
           }
         >
-          All Products
+          All Products ({filteredProducts.length})
         </h1>
 
         {/* Search Bar */}
