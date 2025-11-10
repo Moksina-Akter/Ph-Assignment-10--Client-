@@ -1,62 +1,30 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useAuth } from "../Context/AuthContext";
+import { Link, useNavigate } from "react-router";
+import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
-import { auth } from "../firebase/firebase.config";
-import {
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router";
-
-const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
   const [show, setShow] = useState(false);
-  const [user, setUser] = useState(null);
+  const { user, login, loginWithGoogle, logout } = useAuth();
   const navigate = useNavigate();
-  const emailRef = useRef();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  // Email/Password login
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        toast.success("Logged in successfully!", res);
-        e.target.reset();
-        navigate("/"); // Navigate to Home after login
-      })
-      .catch((err) => toast.error(err.message));
+    await login(email, password);
+    e.target.reset();
+    navigate("/");
   };
 
-  // Google login
-  const handleGoogleLogin = () => {
-    signInWithPopup(auth, googleProvider)
-      .then(() => {
-        toast.success("Google login successful!");
-        navigate("/"); // Navigate to Home
-      })
-      .catch((err) => toast.error(err.message));
+  const handleGoogleLogin = async () => {
+    await loginWithGoogle();
+    navigate("/");
   };
 
-  // Logout
-  const handleSignout = () => {
-    signOut(auth)
-      .then(() => toast.success("Logged out successfully!"))
-      .catch((err) => toast.error(err.message));
+  const handleSignout = async () => {
+    await logout();
   };
 
   return (
@@ -89,7 +57,6 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
-                ref={emailRef}
                 required
                 className="input border-[#693382]"
                 placeholder="Email"
@@ -112,10 +79,6 @@ const Login = () => {
                 </span>
               </div>
 
-              <button type="button" className="link mt-1 link-hover text-sm">
-                Forgot password?
-              </button>
-
               <button
                 type="submit"
                 className="btn bg-[#693382] text-[#efd8ed] w-full mt-4"
@@ -131,8 +94,8 @@ const Login = () => {
             </div>
 
             <button
-              type="button"
               onClick={handleGoogleLogin}
+              type="button"
               className="btn flex items-center justify-center gap-3 bg-white text-gray-800 px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors"
             >
               <img

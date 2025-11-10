@@ -1,66 +1,35 @@
-import React, { useState } from "react";
+import { useAuth } from "../Context/AuthContext";
 import { Link, useNavigate } from "react-router";
-import { auth } from "../firebase/firebase.config";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-  signInWithPopup,
-  GoogleAuthProvider,
-} from "firebase/auth";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 
-const googleProvider = new GoogleAuthProvider();
-
 const Register = () => {
   const [show, setShow] = useState(false);
+  const { register, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
-  // Google login
-  const handleGoogleLogin = () => {
-    signInWithPopup(auth, googleProvider)
-      .then(() => {
-        toast.success("Logged in with Google!");
-        navigate("/"); // navigate to Home page
-      })
-      .catch((err) => toast.error(err.message));
-  };
-
-  // Email registration
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const photo = e.target.photo.value;
+    const password = e.target.password.value;
 
-    const name = e.target.name?.value;
-    const email = e.target.email?.value;
-    const photo = e.target.photo?.value;
-    const password = e.target.password?.value;
-
-    // Password validation
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordPattern.test(password)) {
-      toast.error(
-        "Password must have at least one uppercase, one lowercase, and minimum 6 characters"
+      return alert(
+        "Password must have one uppercase, one lowercase and minimum 6 characters"
       );
-      return;
     }
 
-    // Create user
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        const user = res.user;
+    await register(name, email, password, photo);
+    navigate("/");
+  };
 
-        updateProfile(user, {
-          displayName: name,
-          photoURL: photo,
-        })
-          .then(() => {
-            toast.success(`Registration successful! Welcome, ${name}`);
-            navigate("/"); // navigate to Home page after registration
-          })
-          .catch((err) => console.error("Profile update error:", err));
-      })
-      .catch((err) => toast.error(err.message));
+  const handleGoogleLogin = async () => {
+    await loginWithGoogle();
+    navigate("/");
   };
 
   return (
@@ -69,7 +38,6 @@ const Register = () => {
         <h1 className="text-3xl font-bold text-purple-900 text-center mb-4">
           Register Now!
         </h1>
-
         <form onSubmit={handleRegister}>
           <fieldset className="space-y-3">
             <label className="label">Name</label>
@@ -80,7 +48,6 @@ const Register = () => {
               className="input border-purple-900 w-full"
               required
             />
-
             <label className="label">Email</label>
             <input
               type="email"
@@ -89,7 +56,6 @@ const Register = () => {
               className="input border-purple-900 w-full"
               required
             />
-
             <label className="label">Photo URL</label>
             <input
               type="text"
@@ -98,7 +64,6 @@ const Register = () => {
               className="input border-purple-900 w-full"
               required
             />
-
             <label className="label">Password</label>
             <div className="relative">
               <input
@@ -115,7 +80,6 @@ const Register = () => {
                 {show ? <FaEye /> : <IoEyeOff />}
               </span>
             </div>
-
             <button
               type="submit"
               className="btn w-full bg-[#693382] text-[#efd8ed] mt-4"
@@ -144,7 +108,7 @@ const Register = () => {
         </button>
 
         <p className="text-center mt-4">
-          Already have an account?
+          Already have an account?{" "}
           <Link
             to="/login"
             className="text-blue-700 hover:text-blue-900 font-bold underline"
