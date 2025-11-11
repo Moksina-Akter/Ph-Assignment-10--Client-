@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [show, setShow] = useState(false);
@@ -18,7 +19,7 @@ const Register = () => {
 
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordPattern.test(password)) {
-      return alert(
+      return toast.error(
         "Password must have one uppercase, one lowercase and minimum 6 characters"
       );
     }

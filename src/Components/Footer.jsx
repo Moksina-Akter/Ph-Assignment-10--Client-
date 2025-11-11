@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="bg-[#1E3A8A] text-white pt-10 pb-5">
       <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Logo & About */}
         <div>
           <h1 className="text-2xl font-bold mb-3">ImportExportHub</h1>
           <p className="text-gray-300">
@@ -15,7 +14,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h2 className="text-xl font-semibold mb-3">Quick Links</h2>
           <ul className="space-y-2">
@@ -47,7 +45,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h2 className="text-xl font-semibold mb-3">Contact Us</h2>
           <p className="text-gray-300">Email: support@importexporthub.com</p>
@@ -57,7 +54,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Social Links */}
         <div>
           <h2 className="text-xl font-semibold mb-3">Follow Us</h2>
           <div className="flex gap-3 mt-2">

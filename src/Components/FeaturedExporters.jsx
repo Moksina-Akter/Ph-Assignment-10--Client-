@@ -1,5 +1,5 @@
 import img1 from "../assets/img1.avif";
-const WhyChooseUs = () => {
+const FeaturedExporters = () => {
   return (
     <section className="px-5 lg:px-20 py-16 bg-gradient-to-r from-pink-100 via-red-100 to-yellow-100">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-red-600">
@@ -31,4 +31,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default FeaturedExporters;

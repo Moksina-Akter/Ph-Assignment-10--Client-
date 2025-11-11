@@ -4,11 +4,11 @@ import Home from "../pages/Home";
 import AllProducts from "../pages/AllProducts";
 import MyExports from "../pages/MyExports";
 import MyImports from "../pages/MyImports";
-import AddExport from "../pages/AddExports";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import PrivateRouter from "../PrivateRoute/PrivateRouter";
+// import PrivateRouter from "../PrivateRoute/PrivateRouter";
 import ProductDetails from "../pages/ProductDetails";
+import AddExports from "../pages/AddExports";
 
 const router = createBrowserRouter([
   {
@@ -20,14 +20,15 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: async () => {
-          const res = await fetch("http://localhost:3000/latestProducts");
-          return res.json(); // Latest 6 products
+          const res = await fetch("http://localhost:5000/latestProducts");
+          return res.json();
         },
       },
+
       {
         path: "/all-products",
         element: <AllProducts />,
-        loader: () => fetch("http://localhost:3000/data"),
+        loader: () => fetch("http://localhost:5000/data"),
       },
       {
         path: "/my-exports",
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
         path: "/add-export",
         element: (
           // <PrivateRouter>
-          <AddExport />
+          <AddExports />
           // </PrivateRouter>
         ),
       },
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
           // </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/data/${params.id}`),
+          fetch(`http://localhost:5000/data/${params.id}`),
       },
     ],
   },

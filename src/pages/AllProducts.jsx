@@ -67,22 +67,19 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router";
 
 const AllProducts = () => {
-  const products = useLoaderData(); // products array from server
+  const products = useLoaderData();
   const [search, setSearch] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
-  // Filter products based on search input
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
-
   return (
     <div
       className={
         darkMode ? "bg-gray-900 min-h-screen" : "bg-gray-100 min-h-screen"
       }
     >
-      {/* Dark/Light mode toggle */}
       <div className="flex justify-end p-4">
         <button
           onClick={() => setDarkMode(!darkMode)}
@@ -103,7 +100,6 @@ const AllProducts = () => {
           All Products ({filteredProducts.length})
         </h1>
 
-        {/* Search Bar */}
         <div className="mb-6 text-center">
           <input
             type="text"
@@ -114,7 +110,6 @@ const AllProducts = () => {
           />
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
             <div
@@ -125,27 +120,23 @@ const AllProducts = () => {
                   : "bg-white text-gray-800 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between h-full"
               }
             >
-              {/* Product Image */}
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-52 object-cover"
               />
 
-              {/* Product Info */}
               <div className="p-4 flex flex-col gap-3">
                 <h2 className="text-xl font-semibold">{product.name}</h2>
 
-                {/* Row 1: Price + Origin */}
                 <div className="flex justify-between items-center flex-wrap gap-2 text-gray-600">
                   <p>
-                    Price:{" "}
+                    Price:
                     <span className="text-amber-500">${product.price}</span>
                   </p>
                   <p>Origin: {product.originCountry}</p>
                 </div>
 
-                {/* Row 2: Quantity + Rating */}
                 <div className="flex justify-between items-center flex-wrap gap-2 text-gray-600">
                   <p>Available: {product.quantity}</p>
                   <p>
@@ -154,7 +145,6 @@ const AllProducts = () => {
                   </p>
                 </div>
 
-                {/* See Details Button */}
                 <Link
                   to={`/product/${product._id}`}
                   className="mt-3 text-center bg-[#693382] text-[#efd8ed] py-2 rounded-lg font-semibold hover:bg-purple-800 transition-colors"
