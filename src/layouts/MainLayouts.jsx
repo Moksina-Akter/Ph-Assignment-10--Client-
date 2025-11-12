@@ -5,7 +5,6 @@ import { Outlet } from "react-router";
 const MainLayouts = () => {
   return (
     <div className=" ">
-      <title>Main-Layout</title>
       <Navbar></Navbar>
       <main className=" md:w-11/12 mx-auto ">
         <Outlet></Outlet>

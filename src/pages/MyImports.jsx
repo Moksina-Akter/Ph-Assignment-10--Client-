@@ -156,6 +156,7 @@ const MyImports = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
+      <title>MyImports</title>
       <h2 className="text-3xl font-bold mb-6 text-purple-900">My Imports</h2>
       <div className="grid space-y-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {imports.map((imp) => (

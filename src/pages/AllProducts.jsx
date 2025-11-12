@@ -69,34 +69,16 @@ import { Link, useLoaderData } from "react-router";
 const AllProducts = () => {
   const products = useLoaderData();
   const [search, setSearch] = useState("");
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
   return (
-    <div
-      className={
-        darkMode ? "bg-gray-900 min-h-screen" : "bg-gray-100 min-h-screen"
-      }
-    >
-      <div className="flex justify-end p-4">
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="px-4 py-2 rounded-lg bg-purple-700 text-white hover:bg-purple-800 transition-colors"
-        >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
-      </div>
-
+    <div className="bg-gray-100 min-h-screen">
+      <title>All-Products</title>
       <div className="container mx-auto px-4 py-8">
-        <h1
-          className={
-            darkMode
-              ? "text-3xl font-bold text-white mb-6 text-center"
-              : "text-3xl font-bold text-purple-900 mb-6 text-center"
-          }
-        >
+        <h1 className="text-3xl font-bold text-purple-900 mb-6 text-center">
           All Products ({filteredProducts.length})
         </h1>
 
@@ -114,11 +96,7 @@ const AllProducts = () => {
           {filteredProducts.map((product) => (
             <div
               key={product._id}
-              className={
-                darkMode
-                  ? "bg-gray-800 text-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between h-full"
-                  : "bg-white text-gray-800 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between h-full"
-              }
+              className="bg-white text-gray-800 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between h-full"
             >
               <img
                 src={product.image}
@@ -140,7 +118,7 @@ const AllProducts = () => {
                 <div className="flex justify-between items-center flex-wrap gap-2 text-gray-600">
                   <p>Available: {product.quantity}</p>
                   <p>
-                    Rating:{" "}
+                    Rating:
                     <span className="text-amber-500">{product.rating} ⭐</span>
                   </p>
                 </div>

@@ -35,6 +35,7 @@ const Register = () => {
 
   return (
     <div className="card bg-base-100 mx-auto my-8 w-full max-w-sm shadow-2xl">
+      <title>Register</title>
       <div className="card-body">
         <h1 className="text-3xl font-bold text-purple-900 text-center mb-4">
           Register Now!

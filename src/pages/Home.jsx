@@ -7,6 +7,7 @@ import FeaturedExporters from "../Components/FeaturedExporters";
 const Home = () => {
   return (
     <div>
+      <title>Home</title>
       <Banner />
       <LatestProducts />
       <FeaturedExporters />

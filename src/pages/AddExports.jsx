@@ -48,6 +48,7 @@ const AddExports = () => {
 
   return (
     <div className="max-w-lg mx-auto p-6">
+      <title>AddExports</title>
       <h2 className="text-3xl font-bold text-center mb-6 text-purple-900">
         Add Export / Product
       </h2>

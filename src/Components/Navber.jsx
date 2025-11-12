@@ -9,6 +9,17 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -91,9 +102,7 @@ const Navbar = () => {
   return (
     <div className="bg-[#1E3A8A] shadow-md sticky top-0 z-50">
       <div className="navbar w-11/12 mx-auto flex justify-between items-center py-2">
-        {/* Left Side */}
         <div className="flex items-center gap-4">
-          {/* Mobile Dropdown */}
           <div className="dropdown lg:hidden">
             <div
               tabIndex={0}
@@ -124,7 +133,7 @@ const Navbar = () => {
               <div className="divider bg-white h-[1px]"></div>
               {user ? (
                 <button
-                  // onClick={handleLogout}
+                  onClick={handleLogout}
                   className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
                 >
                   Logout
@@ -155,16 +164,11 @@ const Navbar = () => {
               alt="Logo"
               className="h-20 w-20 object-contain hover:scale-105 transition-transform"
             />
-            {/* <h1 className="text-white text-xl md:text-2xl font-bold">
-              ImportExportHub
-            </h1> */}
           </Link>
 
-          {/* Desktop Navigation */}
           <ul className="hidden lg:flex gap-8">{navLinks}</ul>
         </div>
 
-        {/* Right Side */}
         <div className="flex items-center gap-3">
           {user ? (
             <div className="flex items-center gap-3">
@@ -197,6 +201,12 @@ const Navbar = () => {
             </div>
           )}
         </div>
+        <input
+          onChange={(e) => handleTheme(e.target.checked)}
+          type="checkbox"
+          defaultChecked={localStorage.getItem("theme") === "dark"}
+          className="toggle"
+        />
       </div>
     </div>
   );
