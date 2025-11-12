@@ -119,7 +119,7 @@ const MyImports = () => {
       setImports(data);
     } catch (err) {
       console.error(err);
-      alert("Failed to fetch imports!");
+      // alert("Failed to fetch imports!");
     } finally {
       setLoading(false);
     }
@@ -143,11 +143,10 @@ const MyImports = () => {
         setSelectedImport(null);
         setShowSuccessModal(true); // ✅ open success modal
       } else {
-        alert(data.message || "Failed to remove import");
+        console.log(data.message || "Failed to remove import");
       }
     } catch (err) {
       console.error(err);
-      alert("Error removing import");
     }
   };
 

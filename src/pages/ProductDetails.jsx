@@ -31,7 +31,7 @@
 //       );
 
 //       if (res.ok) {
-//         alert("Product imported successfully!");
+//         ("Product imported successfully!");
 //         const newQuantity = updatedProduct.quantity - parseInt(quantity);
 //         setUpdatedProduct({ ...updatedProduct, quantity: newQuantity });
 //         setQuantity("");

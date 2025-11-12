@@ -6,14 +6,15 @@ import MyExports from "../pages/MyExports";
 import MyImports from "../pages/MyImports";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-// import PrivateRouter from "../PrivateRoute/PrivateRouter";
+import PrivateRouter from "../PrivateRoute/PrivateRouter";
 import ProductDetails from "../pages/ProductDetails";
 import AddExports from "../pages/AddExports";
-
+import Error from "../Components/Error";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
+    errorElement: <Error />,
     hydrateFallbackElement: <div>Loading...</div>,
     children: [
       {
@@ -33,25 +34,25 @@ const router = createBrowserRouter([
       {
         path: "/my-exports",
         element: (
-          // <PrivateRouter>
-          <MyExports />
-          // </PrivateRouter>
+          <PrivateRouter>
+            <MyExports />
+          </PrivateRouter>
         ),
       },
       {
         path: "/my-imports",
         element: (
-          // <PrivateRouter>
-          <MyImports />
-          // </PrivateRouter>
+          <PrivateRouter>
+            <MyImports />
+          </PrivateRouter>
         ),
       },
       {
         path: "/add-export",
         element: (
-          // <PrivateRouter>
-          <AddExports />
-          // </PrivateRouter>
+          <PrivateRouter>
+            <AddExports />
+          </PrivateRouter>
         ),
       },
       {
@@ -65,9 +66,9 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: (
-          // <PrivateRouter>
-          <ProductDetails />
-          // </PrivateRouter>
+          <PrivateRouter>
+            <ProductDetails />
+          </PrivateRouter>
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/data/${params.id}`),
