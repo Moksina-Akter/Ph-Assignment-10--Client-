@@ -10,12 +10,13 @@ import PrivateRouter from "../PrivateRoute/PrivateRouter";
 import ProductDetails from "../pages/ProductDetails";
 import AddExports from "../pages/AddExports";
 import Error from "../Components/Error";
+import LoadingSpinner from "../Components/LoadingSpinner";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
     errorElement: <Error />,
-    hydrateFallbackElement: <div>Loading...</div>,
+    hydrateFallbackElement: <LoadingSpinner />,
     children: [
       {
         path: "/",
