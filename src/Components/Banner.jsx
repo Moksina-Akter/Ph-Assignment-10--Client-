@@ -9,7 +9,8 @@ const Banner = () => {
     <div className="py-10 px-5 lg:px-20 rounded-lg  flex bg-gradient-to-tl from-purple-100 via-purple-200 to-purple-100 flex-col-reverse md:flex-row items-center justify-between">
       <div className="space-y-5 w-full md:w-1/2">
         <h1 className="text-3xl mt-3 md:mt-0 lg:text-5xl font-bold text-purple-700">
-          Welcome to ImportExportHub
+          Welcome to <span className="text-[#1E3A8A]">My Import-Export </span>
+          Hub
         </h1>
         <p className="text-gray-600">
           Manage all your exports and imports seamlessly from a single platform.

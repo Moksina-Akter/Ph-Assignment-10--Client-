@@ -100,9 +100,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-[#1E3A8A] shadow-md sticky top-0 z-50">
-      <div className="navbar w-11/12 mx-auto flex justify-between items-center py-2">
-        <div className="flex items-center gap-4">
+    <div>
+      <div className="shadow-md sticky top-0 z-50   bg-[#1E3A8A]">
+        <div className=" w-11/12 mx-auto  flex justify-between items-center py-2">
           <div className="dropdown lg:hidden">
             <div
               tabIndex={0}
@@ -166,45 +166,45 @@ const Navbar = () => {
           </Link>
 
           <ul className="hidden lg:flex gap-8">{navLinks}</ul>
-        </div>
 
-        <div className="flex items-center gap-3">
-          {user ? (
-            <div className="flex items-center gap-3">
-              <img
-                src={profile}
-                alt="User"
-                className="h-10 w-10 rounded-full border-2 border-purple-800 hover:scale-105 transition-transform"
-              />
-              <button
-                onClick={handleLogout}
-                className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white  font-semibold"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div className="hidden sm:flex gap-2">
-              <Link
-                to="/login"
-                className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
-              >
-                Register
-              </Link>
-            </div>
-          )}
-          <input
-            onChange={(e) => handleTheme(e.target.checked)}
-            type="checkbox"
-            defaultChecked={localStorage.getItem("theme") === "dark"}
-            className="toggle"
-          />
+          <div className="flex items-center gap-3">
+            {user ? (
+              <div className="flex items-center gap-3">
+                <img
+                  src={user.photoURL || profile} // src={logo}
+                  alt="User"
+                  className="h-10 w-10 rounded-full border-2 border-purple-800 hover:scale-105 transition-transform"
+                />
+                <button
+                  onClick={handleLogout}
+                  className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white  font-semibold"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="hidden sm:flex gap-2">
+                <Link
+                  to="/login"
+                  className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
+                >
+                  Register
+                </Link>
+              </div>
+            )}
+            <input
+              onChange={(e) => handleTheme(e.target.checked)}
+              type="checkbox"
+              defaultChecked={localStorage.getItem("theme") === "dark"}
+              className="toggle"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -212,3 +212,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+//-------------

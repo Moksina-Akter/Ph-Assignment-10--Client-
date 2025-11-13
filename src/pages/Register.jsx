@@ -23,16 +23,13 @@ const Register = () => {
         "Password must have one uppercase, one lowercase and minimum 6 characters"
       );
     }
-
     await register(name, email, password, photo);
     navigate("/");
   };
-
   const handleGoogleLogin = async () => {
     await loginWithGoogle();
     navigate("/");
   };
-
   return (
     <div className="card bg-base-100 mx-auto my-8 w-full max-w-sm shadow-2xl">
       <title>Register</title>
