@@ -23,10 +23,10 @@ const MyImports = () => {
       setLoading(false);
     }
   };
-
+  console.log(fetchImports);
   useEffect(() => {
     fetchImports();
-  }, []);
+  }, [userId]);
 
   const handleRemove = async () => {
     if (!selectedImport) return;

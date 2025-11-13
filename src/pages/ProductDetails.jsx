@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState("");
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
+  console.log(product);
   const handleImport = async () => {
     const importQty = parseInt(quantity);
     if (importQty <= 0 || importQty > updatedProduct.quantity) {

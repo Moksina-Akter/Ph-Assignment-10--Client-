@@ -9,13 +9,13 @@ import Register from "../pages/Register";
 import PrivateRouter from "../PrivateRoute/PrivateRouter";
 import ProductDetails from "../pages/ProductDetails";
 import AddExports from "../pages/AddExports";
-import Error from "../Components/Error";
+// import Error from "../Components/Error";
 import LoadingSpinner from "../Components/LoadingSpinner";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
-    errorElement: <Error />,
+    // errorElement: <Error />,
     hydrateFallbackElement: <LoadingSpinner />,
     children: [
       {
