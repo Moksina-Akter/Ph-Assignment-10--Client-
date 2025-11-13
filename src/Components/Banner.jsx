@@ -7,7 +7,6 @@ import { Link } from "react-router";
 const Banner = () => {
   return (
     <div className="py-10 px-5 lg:px-20 rounded-lg mt-20 flex bg-gradient-to-tl from-purple-100 via-purple-200 to-purple-100 flex-col-reverse md:flex-row items-center justify-between">
-      {/* Left side - Title & Buttons */}
       <div className="space-y-5 w-full md:w-1/2">
         <h1 className="text-3xl mt-3 md:mt-0 lg:text-5xl font-bold text-purple-700">
           Welcome to ImportExportHub
@@ -31,7 +30,6 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* Right side - Image Grid */}
       <div className="md:grid grid-cols-2 gap-2 lg:grid-rows-2 w-full md:w-1/2">
         <div className="overflow-hidden transform transition duration-500 hover:scale-105 hover:-rotate-3 hover:shadow-xl cursor-pointer row-span-2 flex justify-center items-center p-2 rounded-lg bg-white/20 backdrop-blur-md shadow-lg">
           <img

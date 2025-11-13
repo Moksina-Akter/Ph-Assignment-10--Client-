@@ -157,7 +157,6 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
               src={logo}
@@ -200,13 +199,13 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+          <input
+            onChange={(e) => handleTheme(e.target.checked)}
+            type="checkbox"
+            defaultChecked={localStorage.getItem("theme") === "dark"}
+            className="toggle"
+          />
         </div>
-        <input
-          onChange={(e) => handleTheme(e.target.checked)}
-          type="checkbox"
-          defaultChecked={localStorage.getItem("theme") === "dark"}
-          className="toggle"
-        />
       </div>
     </div>
   );

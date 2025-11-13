@@ -1,9 +1,12 @@
 import { Link } from "react-router";
+import Navbar from "../Components/Navber";
+import Footer from "../Components/Footer";
 
 const ErrorPage = () => {
   return (
     <div className="h-96 w-5/12 mx-auto pb-10 flex flex-col items-center rounded justify-center text-center bg-gray-100 text-gray-800">
       <title>404-page</title>
+      <Navbar />
       <h1 className="text-6xl font-bold text-purple-900 mb-4">404</h1>
       <h2 className="text-2xl font-semibold mb-2">Oops! Page Not Found</h2>
       <p className="mb-6 text-gray-600">
@@ -15,6 +18,7 @@ const ErrorPage = () => {
       >
         Go Home
       </Link>
+      <Footer />
     </div>
   );
 };
