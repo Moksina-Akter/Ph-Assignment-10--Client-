@@ -14,7 +14,7 @@ const AllProducts = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:5000/search?search=${searchText}`
+        `https://ph-assignment-10-server-self.vercel.app/search?search=${searchText}`
       );
       if (!res.ok) throw new Error("Failed to fetch search results");
       const data = await res.json();

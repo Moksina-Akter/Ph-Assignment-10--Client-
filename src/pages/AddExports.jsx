@@ -26,11 +26,14 @@ const AddExports = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/add-exports", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, userId: user.email }),
-      });
+      const res = await fetch(
+        "https://ph-assignment-10-server-self.vercel.app/add-exports",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, userId: user.email }),
+        }
+      );
 
       const data = await res.json();
 

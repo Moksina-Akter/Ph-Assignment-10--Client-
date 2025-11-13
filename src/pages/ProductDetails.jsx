@@ -18,14 +18,17 @@ const ProductDetails = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/import/user123`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          productId: updatedProduct._id,
-          importQuantity: importQty,
-        }),
-      });
+      const res = await fetch(
+        `https://ph-assignment-10-server-self.vercel.app/import/user123`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            productId: updatedProduct._id,
+            importQuantity: importQty,
+          }),
+        }
+      );
       const data = await res.json();
 
       if (res.ok && data.success) {

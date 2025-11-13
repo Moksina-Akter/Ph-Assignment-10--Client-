@@ -13,7 +13,9 @@ const MyExports = () => {
   const fetchExports = async () => {
     if (!user?.email) return;
     try {
-      const res = await fetch(`http://localhost:5000/my-exports/${user.email}`);
+      const res = await fetch(
+        `https://ph-assignment-10-server-self.vercel.app/my-exports/${user.email}`
+      );
       const data = await res.json();
       setExports(data);
     } catch (err) {
@@ -32,7 +34,7 @@ const MyExports = () => {
     if (!deleteTarget) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/my-exports/${deleteTarget._id}`,
+        `https://ph-assignment-10-server-self.vercel.app/my-exports/${deleteTarget._id}`,
         { method: "DELETE" }
       );
       const data = await res.json();
@@ -63,7 +65,7 @@ const MyExports = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://localhost:5000/my-exports/${selectedExport._id}`,
+        `https://ph-assignment-10-server-self.vercel.app/my-exports/${selectedExport._id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -143,7 +145,7 @@ const MyExports = () => {
               Remove Export
             </h3>
             <p className="text-gray-600 mb-5">
-              Are you sure you want to delete{" "}
+              Are you sure you want to delete
               <span className="font-bold">{deleteTarget.name}</span>?
             </p>
             <div className="flex justify-center gap-4">

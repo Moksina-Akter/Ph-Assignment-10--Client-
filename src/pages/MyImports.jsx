@@ -12,7 +12,9 @@ const MyImports = () => {
   const fetchImports = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/my-imports/${userId}`);
+      const res = await fetch(
+        `https://ph-assignment-10-server-self.vercel.app/my-imports/${userId}`
+      );
       const data = await res.json();
       setImports(data);
     } catch (err) {
@@ -30,7 +32,7 @@ const MyImports = () => {
     if (!selectedImport) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/my-imports/${selectedImport._id}/${userId}`,
+        `https://ph-assignment-10-server-self.vercel.app/my-imports/${selectedImport._id}/${userId}`,
         { method: "DELETE" }
       );
       const data = await res.json();

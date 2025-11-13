@@ -22,7 +22,9 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: async () => {
-          const res = await fetch("http://localhost:5000/latestProducts");
+          const res = await fetch(
+            "https://ph-assignment-10-server-self.vercel.app/latestProducts"
+          );
           return res.json();
         },
       },
@@ -30,7 +32,8 @@ const router = createBrowserRouter([
       {
         path: "/all-products",
         element: <AllProducts />,
-        loader: () => fetch("http://localhost:5000/data"),
+        loader: () =>
+          fetch("https://ph-assignment-10-server-self.vercel.app/data"),
       },
       {
         path: "/my-exports",
@@ -72,7 +75,9 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/data/${params.id}`),
+          fetch(
+            `https://ph-assignment-10-server-self.vercel.app/data/${params.id}`
+          ),
       },
     ],
   },
