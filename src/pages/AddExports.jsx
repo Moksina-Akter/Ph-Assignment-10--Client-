@@ -49,12 +49,12 @@ const AddExports = () => {
   return (
     <div className="max-w-lg mx-auto p-6">
       <title>AddExports</title>
-      <h2 className="text-3xl font-bold text-center mb-6 text-purple-900">
-        Add Export / Product
+      <h2 className="text-3xl font-bold  text-center mb-6 text-purple-700">
+        Add Export
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-lg rounded-xl p-6 space-y-4"
+        className="bg-white border border-gray-300 shadow-lg rounded-xl p-6 space-y-4"
       >
         <input
           type="text"
@@ -63,7 +63,7 @@ const AddExports = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border dark:bg-gray-300 px-4 py-2 rounded-lg"
         />
         <input
           type="text"
@@ -72,7 +72,7 @@ const AddExports = () => {
           value={formData.image}
           onChange={handleChange}
           required
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border dark:bg-gray-300 px-4 py-2 rounded-lg"
         />
         <input
           type="number"
@@ -81,7 +81,7 @@ const AddExports = () => {
           value={formData.price}
           onChange={handleChange}
           required
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border dark:bg-gray-300 px-4 py-2 rounded-lg"
         />
         <input
           type="text"
@@ -90,7 +90,7 @@ const AddExports = () => {
           value={formData.originCountry}
           onChange={handleChange}
           required
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border dark:bg-gray-300 px-4 py-2 rounded-lg"
         />
         <input
           type="number"
@@ -99,7 +99,7 @@ const AddExports = () => {
           value={formData.rating}
           onChange={handleChange}
           required
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border dark:bg-gray-300 px-4 py-2 rounded-lg"
         />
         <input
           type="number"
@@ -108,13 +108,13 @@ const AddExports = () => {
           value={formData.quantity}
           onChange={handleChange}
           required
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border dark:bg-gray-300 px-4 py-2 rounded-lg"
         />
         <button
           type="submit"
           className="w-full bg-purple-700 text-white py-2 rounded-lg hover:bg-purple-800 transition"
         >
-          Add Export / Product
+          Add Export
         </button>
       </form>
     </div>

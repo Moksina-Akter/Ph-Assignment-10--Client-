@@ -83,14 +83,16 @@ const ProductDetails = () => {
 
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white p-6 rounded-lg w-96 shadow-xl">
-            <h3 className="text-xl font-semibold mb-4">Import Product</h3>
+          <div className="bg-white p-6  rounded-lg w-96 shadow-xl">
+            <h3 className="text-xl font-semibold mb-4 dark:text-purple-700">
+              Import Product
+            </h3>
             <input
               type="number"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               placeholder="Enter quantity"
-              className="w-full border border-gray-300 rounded-lg p-2 mb-4"
+              className="w-full border dark:bg-gray-300 border-gray-300 rounded-lg p-2 mb-4"
             />
             <button
               onClick={handleImport}

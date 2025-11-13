@@ -1,4 +1,4 @@
-import { useAuth } from "../Context/AuthContext";
+import { useAuth } from "../Context/AuthProvider";
 import { Link, useNavigate } from "react-router";
 import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";

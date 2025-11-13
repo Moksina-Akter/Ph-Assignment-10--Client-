@@ -46,7 +46,7 @@ const FeaturedExporters = () => {
   ];
 
   return (
-    <section className="px-5 lg:px-20 py-16 bg-gradient-to-r from-pink-50 via-red-50 to-yellow-50">
+    <section className="px-5 lg:px-20 py-16 dark:bg-black">
       <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-purple-700">
         Featured Exporters
       </h2>
@@ -55,9 +55,9 @@ const FeaturedExporters = () => {
         {exporters.map((exporter, index) => (
           <div
             key={index}
-            className="relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+            className="relative bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl"
           >
-            <div className="overflow-hidden">
+            <div className="overflow-hidden ">
               <img
                 src={exporter.img}
                 alt={exporter.name}

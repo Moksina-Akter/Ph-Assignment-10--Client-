@@ -8,6 +8,9 @@ const Home = () => {
   return (
     <div>
       <title>Home</title>
+      <h1 className="text-3xl md:text-4xl p-5 font-bold text-center mb-10 text-purple-700">
+        My Import-Export Hub
+      </h1>
       <Banner />
       <LatestProducts />
       <FeaturedExporters />

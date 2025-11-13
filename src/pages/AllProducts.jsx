@@ -136,17 +136,17 @@ const AllProducts = () => {
     }
   };
 
-  // 🔙 Reset / Back to all products
+  // Reset / Back to all products
   const handleReset = () => {
     setProducts(loadedProducts);
     setSearchText("");
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-white max-w-6xl mx-auto min-h-screen">
       <title>All Products | Import Export Hub</title>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container dark:bg-black mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-purple-900 mb-6 text-center">
           All Products ({products.length})
         </h1>

@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 const Banner = () => {
   return (
-    <div className="py-10 px-5 lg:px-20 rounded-lg mt-20 flex bg-gradient-to-tl from-purple-100 via-purple-200 to-purple-100 flex-col-reverse md:flex-row items-center justify-between">
+    <div className="py-10 px-5 lg:px-20 rounded-lg  flex bg-gradient-to-tl from-purple-100 via-purple-200 to-purple-100 flex-col-reverse md:flex-row items-center justify-between">
       <div className="space-y-5 w-full md:w-1/2">
         <h1 className="text-3xl mt-3 md:mt-0 lg:text-5xl font-bold text-purple-700">
           Welcome to ImportExportHub
@@ -15,16 +15,10 @@ const Banner = () => {
           Manage all your exports and imports seamlessly from a single platform.
         </p>
         <div className="flex gap-5 items-center">
-          <Link
-            to="/all-products"
-            className="btn bg-gradient-to-r from-purple-400 to-purple-700 text-white"
-          >
+          <Link to="/all-products" className="btn bg-purple-700 text-white">
             All Products
           </Link>
-          <Link
-            to="/add-export"
-            className="btn bg-gradient-to-r from-purple-400 to-purple-700 text-white"
-          >
+          <Link to="/add-export" className="btn bg-purple-700 text-white">
             Add Export
           </Link>
         </div>

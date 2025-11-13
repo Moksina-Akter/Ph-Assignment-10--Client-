@@ -41,8 +41,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-[#F59E0B] font-semibold underline"
-              : "text-white hover:text-[#FBBF24]"
+              ? "text-purple-700 font-semibold underline"
+              : "text-white hover:text-purple-500"
           }
         >
           Home
@@ -53,8 +53,8 @@ const Navbar = () => {
           to="/all-products"
           className={({ isActive }) =>
             isActive
-              ? "text-[#F59E0B] font-semibold underline"
-              : "text-white hover:text-[#FBBF24]"
+              ? "text-purple-700 font-semibold underline"
+              : "text-white hover:text-purple-500"
           }
         >
           All Products
@@ -65,8 +65,8 @@ const Navbar = () => {
           to="/my-exports"
           className={({ isActive }) =>
             isActive
-              ? "text-[#F59E0B] font-semibold underline"
-              : "text-white hover:text-[#FBBF24]"
+              ? "text-purple-700 font-semibold underline"
+              : "text-white hover:text-purple-500"
           }
         >
           My Exports
@@ -77,8 +77,8 @@ const Navbar = () => {
           to="/my-imports"
           className={({ isActive }) =>
             isActive
-              ? "text-[#F59E0B] font-semibold underline"
-              : "text-white hover:text-[#FBBF24]"
+              ? "text-purple-700 font-semibold underline"
+              : "text-white hover:text-purple-500"
           }
         >
           My Imports
@@ -89,8 +89,8 @@ const Navbar = () => {
           to="/add-export"
           className={({ isActive }) =>
             isActive
-              ? "text-[#F59E0B] font-semibold underline"
-              : "text-white hover:text-[#FBBF24]"
+              ? "text-purple-700 font-semibold underline"
+              : "text-white hover:text-purple-500"
           }
         >
           Add Export
@@ -134,7 +134,7 @@ const Navbar = () => {
               {user ? (
                 <button
                   onClick={handleLogout}
-                  className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
+                  className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
                 >
                   Logout
                 </button>
@@ -142,13 +142,13 @@ const Navbar = () => {
                 <>
                   <Link
                     to="/login"
-                    className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
+                    className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
                   >
                     Login
                   </Link>
                   <Link
                     to="/register"
-                    className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
+                    className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
                   >
                     Register
                   </Link>
@@ -174,11 +174,11 @@ const Navbar = () => {
               <img
                 src={profile}
                 alt="User"
-                className="h-10 w-10 rounded-full border-2 border-[#F59E0B] hover:scale-105 transition-transform"
+                className="h-10 w-10 rounded-full border-2 border-purple-800 hover:scale-105 transition-transform"
               />
               <button
                 onClick={handleLogout}
-                className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
+                className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white  font-semibold"
               >
                 Logout
               </button>
@@ -187,13 +187,13 @@ const Navbar = () => {
             <div className="hidden sm:flex gap-2">
               <Link
                 to="/login"
-                className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
+                className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="btn btn-sm bg-[#F59E0B] hover:bg-[#FBBF24] text-[#1E3A8A] font-semibold"
+                className="btn btn-sm bg-purple-700 hover:bg-purple-500 text-white font-semibold"
               >
                 Register
               </Link>
