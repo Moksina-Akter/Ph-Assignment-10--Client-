@@ -72,5 +72,6 @@ Import-Export Hub is a modern web platform where users can manage exports, brows
 
 ## Installation
 
-https://github.com/Moksina-Akter/Ph-Assignment-10-Server
-https://github.com/Moksina-Akter/Ph-Assignment-10--Client-
+Server side: https://github.com/Moksina-Akter/Ph-Assignment-10-Server
+
+Client Side:https://github.com/Moksina-Akter/Ph-Assignment-10--Client-
